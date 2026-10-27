@@ -1,0 +1,1130 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1234 Finishing & Ceramic Tiles - Sales & Wholesale Distribution</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Authentic Social Logos & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .page-view { display: none; }
+        .page-view.active { display: block; }
+        
+        /* Highlight design for active page indicator */
+        .nav-link.active-page {
+            color: #d97706;
+            background-color: #fffbe6;
+            font-weight: 700;
+            border-bottom: 3px solid #d97706;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        .mobile-nav-link.active-page {
+            color: #d97706;
+            background-color: #fef3c7;
+            font-weight: 700;
+            border-left: 4px solid #d97706;
+            padding-left: 0.75rem;
+        }
+
+        /* Initial Page Preloader overlay */
+        #page-preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background-color: #0f172a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+        }
+
+        /* Scroll Reveal Animation Styles */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Social Icon Hover Effects */
+        .social-btn {
+            transition: all 0.3s ease;
+        }
+        .social-btn.tiktok:hover { background-color: #000000; color: #00f2fe; filter: drop-shadow(0 0 5px #ff0050); }
+        .social-btn.instagram:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; }
+        .social-btn.facebook:hover { background-color: #1877f2; color: #fff; }
+        .social-btn.telegram:hover { background-color: #229ed9; color: #fff; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- 0 to 100% PRELOADER ANIMATION -->
+    <div id="page-preloader">
+        <div class="text-center space-y-4 px-4">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-amber-600 text-white font-black text-2xl rounded-2xl shadow-2xl animate-bounce">
+                1234
+            </div>
+            <h2 class="text-white text-xl font-bold tracking-wide">1234 FINISHING & CERAMICS</h2>
+            <div class="w-64 bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700">
+                <div id="loader-bar" class="bg-amber-500 h-full w-0 transition-all duration-75"></div>
+            </div>
+            <p id="loader-percent" class="text-amber-400 font-extrabold text-2xl tracking-widest">0%</p>
+            <p class="text-xs text-slate-400 tracking-wider uppercase">Loading Premium Ceramic Solutions...</p>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <button onclick="navigateTo('home')" class="flex items-center space-x-3 text-left focus:outline-none group">
+                    <div class="bg-amber-600 text-white p-2.5 rounded-xl shadow-md font-black text-xl tracking-wider group-hover:bg-amber-700 transition">
+                        1234
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold text-slate-900 tracking-tight block leading-none">1234 <span class="text-amber-600">Finishing</span></span>
+                        <span class="text-xs text-slate-500 font-medium">Ceramics & Supply Co.</span>
+                    </div>
+                </button>
+
+                <!-- Desktop Navigation Links (ORDER: Home -> About Us -> Products -> Calculator -> Wholesale -> SOP) -->
+                <nav class="hidden lg:flex space-x-1 xl:space-x-2 text-sm font-semibold text-slate-700">
+                    <button onclick="navigateTo('home')" class="nav-link px-3 py-2.5 transition hover:text-amber-600 focus:outline-none flex items-center space-x-1.5" id="nav-home">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        <span>Home</span>
+                    </button>
+                    <button onclick="navigateTo('about')" class="nav-link px-3 py-2.5 transition hover:text-amber-600 focus:outline-none flex items-center space-x-1.5" id="nav-about">
+                        <i data-lucide="users" class="w-4 h-4"></i>
+                        <span>About Us</span>
+                    </button>
+                    <button onclick="navigateTo('products')" class="nav-link px-3 py-2.5 transition hover:text-amber-600 focus:outline-none flex items-center space-x-1.5" id="nav-products">
+                        <i data-lucide="grid" class="w-4 h-4"></i>
+                        <span>Products Catalog</span>
+                    </button>
+                    <button onclick="navigateTo('calculator')" class="nav-link px-3 py-2.5 transition hover:text-amber-600 focus:outline-none flex items-center space-x-1.5" id="nav-calculator">
+                        <i data-lucide="calculator" class="w-4 h-4"></i>
+                        <span>Tile Calculator</span>
+                    </button>
+                    <button onclick="navigateTo('wholesale')" class="nav-link px-3 py-2.5 transition hover:text-amber-600 focus:outline-none flex items-center space-x-1.5" id="nav-wholesale">
+                        <i data-lucide="building-2" class="w-4 h-4"></i>
+                        <span>Wholesale & Contractors</span>
+                    </button>
+                    <button onclick="navigateTo('operations')" class="nav-link px-3 py-2.5 transition hover:text-amber-600 focus:outline-none flex items-center space-x-1.5" id="nav-operations">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                        <span>Operations & Standards</span>
+                    </button>
+                </nav>
+
+                <!-- Right Action Bar with Language Selector -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <!-- LANGUAGE SELECTOR BUTTON -->
+                    <div class="relative group">
+                        <button id="lang-btn-desktop" onclick="toggleLangMenuDesktop(event)" class="bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold px-3 py-2 rounded-lg flex items-center space-x-1.5 border border-slate-200 transition focus:outline-none">
+                            <i data-lucide="globe" class="w-4 h-4 text-amber-600"></i>
+                            <span id="current-lang-text">EN</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-500"></i>
+                        </button>
+                        <div id="lang-dropdown-desktop" class="absolute right-0 top-full mt-1 w-36 bg-white rounded-xl shadow-xl border border-slate-200 hidden p-1 z-50">
+                            <button onclick="selectLanguage('EN', 'English')" class="w-full text-left px-3 py-2 text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-600 rounded-md flex items-center justify-between">
+                                <span>English</span>
+                                <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-bold">EN</span>
+                            </button>
+                            <button onclick="selectLanguage('AM', 'አማርኛ')" class="w-full text-left px-3 py-2 text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-600 rounded-md flex items-center justify-between">
+                                <span>አማርኛ</span>
+                                <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-bold">AM</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bookmark Counter -->
+                    <button onclick="navigateTo('products')" class="relative p-2 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-700 transition" title="Saved Favorites">
+                        <i data-lucide="bookmark" class="w-5 h-5"></i>
+                        <span id="fav-count-badge" class="absolute -top-1 -right-1 bg-amber-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+
+                    <button onclick="navigateTo('wholesale')" class="bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition shadow-sm flex items-center space-x-1.5">
+                        <span>Get Bulk Quote</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button & Language Toggle -->
+                <div class="lg:hidden flex items-center space-x-2">
+                    <div class="relative">
+                        <button onclick="toggleLangMenuMobile(event)" class="bg-slate-100 text-slate-800 text-xs font-bold px-2.5 py-1.5 rounded-lg flex items-center space-x-1 border border-slate-200 focus:outline-none">
+                            <i data-lucide="globe" class="w-3.5 h-3.5 text-amber-600"></i>
+                            <span id="current-lang-text-mobile">EN</span>
+                        </button>
+                        <div id="lang-dropdown-mobile" class="absolute right-0 top-full mt-1 w-32 bg-white rounded-xl shadow-xl border border-slate-200 hidden p-1 z-50">
+                            <button onclick="selectLanguage('EN', 'English')" class="w-full text-left px-3 py-1.5 text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-600 rounded-md">English (EN)</button>
+                            <button onclick="selectLanguage('AM', 'አማርኛ')" class="w-full text-left px-3 py-1.5 text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-600 rounded-md">አማርኛ (AM)</button>
+                        </div>
+                    </div>
+                    <button onclick="toggleMobileMenu()" class="text-slate-700 p-2 rounded-lg hover:bg-slate-100 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+            <button onclick="navigateTo('home')" class="mobile-nav-link block w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-600" id="mnav-home">Home</button>
+            <button onclick="navigateTo('about')" class="mobile-nav-link block w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-600" id="mnav-about">About Us</button>
+            <button onclick="navigateTo('products')" class="mobile-nav-link block w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-600" id="mnav-products">Products Catalog</button>
+            <button onclick="navigateTo('calculator')" class="mobile-nav-link block w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-600" id="mnav-calculator">Tile Calculator</button>
+            <button onclick="navigateTo('wholesale')" class="mobile-nav-link block w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-600" id="mnav-wholesale">Wholesale & Contractors</button>
+            <button onclick="navigateTo('operations')" class="mobile-nav-link block w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-600" id="mnav-operations">Operations & Standards</button>
+            <button onclick="navigateTo('wholesale')" class="block w-full text-center bg-amber-600 text-white py-2.5 rounded-lg font-semibold mt-4">Get Bulk Quote</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT PAGES -->
+    <main class="flex-grow">
+        
+        <!-- PAGE 1: HOME -->
+        <div id="page-home" class="page-view active">
+            <!-- Hero Banner -->
+            <section class="relative bg-slate-900 text-white py-20 lg:py-28 overflow-hidden">
+                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <div class="inline-flex items-center space-x-2 bg-amber-500/20 text-amber-400 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider border border-amber-500/30">
+                                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                <span>1234 Premium Finishing Materials</span>
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight">
+                                Premier Floor Ceramics & Advanced Finishing Solutions
+                            </h1>
+                            <p class="text-slate-300 text-lg leading-relaxed">
+                                Welcome to <strong>1234 Ceramics & Finishing Co.</strong> Your trusted direct factory wholesale distributor and retail provider for heavy-duty porcelain, polished ceramic tiles, waterproof tile adhesives, grouts, and stainless decorative trims.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                                <button onclick="navigateTo('products')" class="inline-flex justify-center items-center bg-amber-600 hover:bg-amber-500 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                                    Browse Product Catalog
+                                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                                </button>
+                                <button onclick="navigateTo('calculator')" class="inline-flex justify-center items-center bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-6 py-3.5 rounded-xl transition">
+                                    <i data-lucide="calculator" class="w-4 h-4 mr-2 text-amber-500"></i>
+                                    Calculate Materials
+                                </button>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="bg-gradient-to-tr from-amber-600 to-amber-400 rounded-2xl p-1.5 shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="1234 Ceramic Showroom" class="rounded-xl object-cover w-full h-80 lg:h-96 shadow-md" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STATISTICS SECTION WITH DYNAMIC 0 TO TARGET ANIMATED COUNTERS -->
+            <section class="bg-white border-b border-slate-200 py-12" id="stats-section">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm reveal-on-scroll">
+                            <div class="text-4xl font-black text-amber-600 flex justify-center items-center">
+                                <span class="counter" data-target="15">0</span><span>+</span>
+                            </div>
+                            <div class="text-xs uppercase font-bold text-slate-500 mt-2 tracking-wider">Years Market Experience</div>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm reveal-on-scroll">
+                            <div class="text-4xl font-black text-amber-600 flex justify-center items-center">
+                                <span class="counter" data-target="1200">0</span><span>+</span>
+                            </div>
+                            <div class="text-xs uppercase font-bold text-slate-500 mt-2 tracking-wider">Completed Projects</div>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm reveal-on-scroll">
+                            <div class="text-4xl font-black text-amber-600 flex justify-center items-center">
+                                <span class="counter" data-target="450">0</span><span>k m²</span>
+                            </div>
+                            <div class="text-xs uppercase font-bold text-slate-500 mt-2 tracking-wider">Tiles Supplied Annually</div>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm reveal-on-scroll">
+                            <div class="text-4xl font-black text-amber-600 flex justify-center items-center">
+                                <span class="counter" data-target="100">0</span><span>%</span>
+                            </div>
+                            <div class="text-xs uppercase font-bold text-slate-500 mt-2 tracking-wider">Quality Certified</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Features & Brand Strengths -->
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12 reveal-on-scroll">
+                    <span class="text-xs uppercase font-bold text-amber-600 tracking-wider">Why Choose 1234</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Engineering Excellence in Ceramics</h2>
+                    <p class="text-slate-600 text-sm mt-2">Providing comprehensive finishing solutions tailored for residential houses, commercial centers, and high-rise developments.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition reveal-on-scroll">
+                        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-5">
+                            <i data-lucide="grid" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Diverse Ceramic Range</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            From Italian-inspired high-gloss polished porcelain to heavy-duty outdoor pavers and specialized polymer grouts.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition reveal-on-scroll">
+                        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-5">
+                            <i data-lucide="truck" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Jobsite B2B Logistics</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Reliable, continuous wholesale supply chain and prompt direct truck delivery straight to your construction sites.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg transition reveal-on-scroll">
+                        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-5">
+                            <i data-lucide="calculator" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Smart Material Estimator</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Prevent material wastage with our built-in tile, adhesive, and joint grout calculator calibrated for custom room sizes.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 2: ABOUT US (PLACED RIGHT BELOW HOME IN NAVIGATION) -->
+        <div id="page-about" class="page-view">
+            <section class="py-12 bg-slate-100 min-h-[80vh]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    
+                    <!-- Hero Story Section -->
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-slate-200 mb-12 reveal-on-scroll">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div class="space-y-5">
+                                <span class="text-xs uppercase font-bold text-amber-600 tracking-wider">Our Story & Commitment</span>
+                                <h2 class="text-3xl font-extrabold text-slate-900">Building Stronger Foundations Since 2011</h2>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    <strong>1234 Finishing & Ceramics</strong> started as a small local tile supplier with a big vision: to eliminate low-quality ceramics, inconsistent batch shading, and unreliable deliveries in the construction industry.
+                                </p>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Over the past 15 years, we have grown into a leading direct factory distributor of high-end porcelain, floor tiles, polymer adhesives, and architectural finishing profiles—supplying over 1,200 landmark residential and commercial projects.
+                                </p>
+                            </div>
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80" alt="1234 Company History" class="rounded-2xl object-cover w-full h-80 shadow-md">
+                                <div class="absolute -bottom-5 -left-5 bg-amber-600 text-white p-5 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                                    <div class="text-2xl font-black">15+ Years</div>
+                                    <div class="text-xs font-medium">Delivering Quality & Excellence in Finishing Materials</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- What Makes Us Different (3 Columns with Images) -->
+                    <div class="text-center max-w-2xl mx-auto mb-10 reveal-on-scroll">
+                        <h3 class="text-2xl font-bold text-slate-900">What Sets 1234 Apart From Others</h3>
+                        <p class="text-slate-600 text-sm mt-1">We don't just sell tiles; we deliver guaranteed durability and precision.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col reveal-on-scroll">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="Factory Direct Quality" class="h-48 w-full object-cover">
+                            <div class="p-6">
+                                <h4 class="font-bold text-slate-900 text-lg mb-2">Direct Factory Sourcing</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    We work directly with premier ceramic manufacturers, removing middleman markups and passing maximum savings onto home owners and contractors.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col reveal-on-scroll">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Batch Matching" class="h-48 w-full object-cover">
+                            <div class="p-6">
+                                <h4 class="font-bold text-slate-900 text-lg mb-2">Strict Shade & Caliber Control</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Every tile box is inspected for exact batch shade code matching. We ensure zero color variance across your entire floor space.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col reveal-on-scroll">
+                            <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=600&q=80" alt="Jobsite Logistics" class="h-48 w-full object-cover">
+                            <div class="p-6">
+                                <h4 class="font-bold text-slate-900 text-lg mb-2">Dedicated Jobsite Logistics</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Our fleet delivers heavy pallets straight to your building site, avoiding material damage and reducing construction delays.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 3: PRODUCTS CATALOG -->
+        <div id="page-products" class="page-view">
+            <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="border-b border-slate-200 pb-8 mb-8 flex flex-col md:flex-row justify-between items-start md:items-end">
+                    <div>
+                        <span class="text-xs uppercase font-bold text-amber-600 tracking-wider">1234 Materials Selection</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Ceramic & Finishing Catalog</h2>
+                        <p class="text-slate-600 mt-2">Explore our certified floor ceramics, wall tiles, adhesives, and edge profiles.</p>
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="filter-buttons">
+                        <button onclick="filterCatalog('all', this)" class="filter-btn bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">All Materials</button>
+                        <button onclick="filterCatalog('floor', this)" class="filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-4 py-2 rounded-lg text-sm font-semibold transition">Floor Tiles</button>
+                        <button onclick="filterCatalog('wall', this)" class="filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-4 py-2 rounded-lg text-sm font-semibold transition">Wall Ceramics</button>
+                        <button onclick="filterCatalog('finishing', this)" class="filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-4 py-2 rounded-lg text-sm font-semibold transition">Finishing Supplies</button>
+                    </div>
+                </div>
+
+                <!-- Catalog Items Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="catalog-grid">
+                    <!-- Dynamic Product Cards injected here -->
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 4: TILE CALCULATOR -->
+        <div id="page-calculator" class="page-view">
+            <section class="py-12 bg-slate-100 min-h-[80vh]">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-2xl mx-auto mb-10">
+                        <span class="text-xs uppercase font-bold text-amber-600 tracking-wider">Precision Estimation</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">1234 Tile & Material Calculator</h2>
+                        <p class="text-slate-600 mt-2">Prevent material shortages or over-purchasing by entering your project specifications below.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Inputs -->
+                        <div class="space-y-5">
+                            <h3 class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-3 flex items-center">
+                                <i data-lucide="sliders" class="w-5 h-5 text-amber-600 mr-2"></i>
+                                Room Dimensions
+                            </h3>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1">Room Length (meters)</label>
+                                <input type="number" id="calc-length" value="6" min="0.1" step="0.1" class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none text-slate-800 font-medium" oninput="calculateTileNeeds()">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1">Room Width (meters)</label>
+                                <input type="number" id="calc-width" value="5" min="0.1" step="0.1" class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none text-slate-800 font-medium" oninput="calculateTileNeeds()">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1">Tile Unit Size</label>
+                                <select id="calc-tile-size" class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none text-slate-800 font-medium" onchange="calculateTileNeeds()">
+                                    <option value="0.36">60cm x 60cm Porcelain (0.36 m²)</option>
+                                    <option value="0.90">60cm x 150cm Large Slab (0.90 m²)</option>
+                                    <option value="0.64">80cm x 80cm Executive (0.64 m²)</option>
+                                    <option value="0.09">30cm x 30cm Wall/Bathroom (0.09 m²)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1">Layout Waste Margin (%)</label>
+                                <select id="calc-waste" class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none text-slate-800 font-medium" onchange="calculateTileNeeds()">
+                                    <option value="0.10">10% Standard Grid Layout</option>
+                                    <option value="0.15">15% Diagonal / Patterned Layout</option>
+                                    <option value="0.05">5% Straight Simple Layout</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Results Card -->
+                        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 md:p-8 flex flex-col justify-between border border-amber-200 shadow-inner">
+                            <div>
+                                <h3 class="text-lg font-bold text-amber-900 border-b border-amber-200 pb-3 flex items-center">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-600 mr-2"></i>
+                                    Estimated Project Materials
+                                </h3>
+                                <dl class="mt-5 space-y-4 text-sm">
+                                    <div class="flex justify-between items-center">
+                                        <dt class="text-slate-600 font-medium">Net Floor Area:</dt>
+                                        <dd class="font-bold text-slate-900 text-base" id="res-net-area">0 m²</dd>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <dt class="text-slate-600 font-medium">Total Area (w/ Waste):</dt>
+                                        <dd class="font-bold text-amber-700 text-base" id="res-total-area">0 m²</dd>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <dt class="text-slate-600 font-medium">Required Tile Pieces:</dt>
+                                        <dd class="font-extrabold text-slate-900 text-lg" id="res-tile-count">0 pcs</dd>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <dt class="text-slate-600 font-medium">Adhesive Bags (25kg):</dt>
+                                        <dd class="font-bold text-slate-900 text-base" id="res-adhesive">0 bags</dd>
+                                    </div>
+                                    <div class="flex justify-between items-center border-t border-amber-200 pt-3">
+                                        <dt class="text-slate-600 font-medium">Grout Powder (5kg):</dt>
+                                        <dd class="font-bold text-slate-900 text-base" id="res-grout">0 packs</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 5: WHOLESALE B2B -->
+        <div id="page-wholesale" class="page-view">
+            <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Simple Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs uppercase font-bold text-amber-600 tracking-wider">Direct Factory Wholesale</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Bulk Ceramic & Finishing Supply for Contractors</h2>
+                    <p class="text-slate-600 mt-3 text-base leading-relaxed">
+                        Are you building a residential complex, commercial building, or managing a large construction project? <strong>1234 Finishing</strong> provides direct factory wholesale rates, guaranteed continuous inventory, and jobsite truck delivery.
+                    </p>
+                </div>
+
+                <!-- 3 Step Ordering Explanation -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative reveal-on-scroll">
+                        <div class="w-10 h-10 bg-amber-600 text-white font-black rounded-lg flex items-center justify-center text-lg mb-4">1</div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Submit Your Requirements</h3>
+                        <p class="text-slate-600 text-sm">Tell us your total floor area (m²), preferred tile finish, and project location using the quick form below.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative reveal-on-scroll">
+                        <div class="w-10 h-10 bg-amber-600 text-white font-black rounded-lg flex items-center justify-center text-lg mb-4">2</div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Receive Wholesale Pricing</h3>
+                        <p class="text-slate-600 text-sm">Our B2B sales team prepares an itemized quote with direct factory discounts within 2 hours.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative reveal-on-scroll">
+                        <div class="w-10 h-10 bg-amber-600 text-white font-black rounded-lg flex items-center justify-center text-lg mb-4">3</div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Direct Jobsite Delivery</h3>
+                        <p class="text-slate-600 text-sm">We package, audit shade consistency, and transport materials directly to your building site on schedule.</p>
+                    </div>
+                </div>
+
+                <!-- B2B Interactive Quote Request -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-slate-900 rounded-3xl p-8 lg:p-12 text-white shadow-2xl">
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-extrabold tracking-tight">Partner With 1234 Finishing</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            We supply over 50+ real estate developers and general contractors. Enjoy special credit terms, designated account management, and priority batch color matching.
+                        </p>
+                        
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-center space-x-3 text-slate-200 text-sm">
+                                <i data-lucide="check-circle" class="text-amber-500 w-5 h-5 flex-shrink-0"></i>
+                                <span>Tiered Volume Pricing (Save up to 25% on bulk orders)</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-slate-200 text-sm">
+                                <i data-lucide="check-circle" class="text-amber-500 w-5 h-5 flex-shrink-0"></i>
+                                <span>Batch & Shade Color Guarantee (Zero tone mismatch)</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-slate-200 text-sm">
+                                <i data-lucide="check-circle" class="text-amber-500 w-5 h-5 flex-shrink-0"></i>
+                                <span>Full Solution Packages (Tiles, Adhesives, Grouts & Trims)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- B2B Request Form -->
+                    <div class="bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-700">
+                        <h4 class="text-xl font-bold text-white mb-2">Request Wholesale Price Quote</h4>
+                        <p class="text-xs text-slate-400 mb-6">Fill in details below for a customized commercial quotation.</p>
+                        
+                        <form id="b2b-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1 font-semibold">Company / Developer Name</label>
+                                <input type="text" required placeholder="e.g. Skyline Construction Plc" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1 font-semibold">Contact Email</label>
+                                    <input type="email" required placeholder="info@company.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1 font-semibold">Phone Number</label>
+                                    <input type="tel" required placeholder="+251 9..." class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1 font-semibold">Material Interest</label>
+                                <select class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+                                    <option>Bulk Floor Ceramics & Porcelain</option>
+                                    <option>Wall Ceramic Materials</option>
+                                    <option>Tile Adhesives & Waterproofing</option>
+                                    <option>Complete Commercial Finishing Package</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-1 font-semibold">Estimated Volume (m²)</label>
+                                <input type="number" placeholder="e.g. 1500 m²" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+                            </div>
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-3.5 rounded-lg transition shadow-lg mt-2 text-sm">
+                                Submit Request for Wholesale Pricing
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 6: OPERATIONS & SOP -->
+        <div id="page-operations" class="page-view">
+            <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs uppercase font-bold text-amber-600 tracking-wider">Quality Assurance & Operations</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-1">1234 Standard Operating Procedures (SOP)</h2>
+                    <p class="text-slate-600 text-sm mt-2">
+                        To guarantee high product standards, zero shipment breakage, and flawless tile alignment, 1234 Finishing strictly adheres to standardized operating procedures across our warehouses and logistics network.
+                    </p>
+                </div>
+
+                <!-- 4 Core Detailed SOP Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- SOP 1 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 reveal-on-scroll">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-amber-100 text-amber-600 p-3 rounded-xl font-bold">SOP-01</div>
+                            <h3 class="font-bold text-xl text-slate-900">Material Receiving & Quality Audits</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Every batch of ceramic tiles arriving from manufacturing partners undergoes a multi-point quality check before entering our inventory.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-600 list-disc pl-5">
+                            <li><strong>Caliber & Sizing Audit:</strong> Tiles are sampled to verify standard length, width, and right-angle edge perfection (0.1% tolerance).</li>
+                            <li><strong>Shade Tone Matching:</strong> Color shades are categorized under unified batch numbers to prevent floor color variations.</li>
+                            <li><strong>Water Absorption Rating:</strong> Porcelain tiles are lab-tested to verify absorption rates below 0.5%.</li>
+                        </ul>
+                    </div>
+
+                    <!-- SOP 2 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 reveal-on-scroll">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-amber-100 text-amber-600 p-3 rounded-xl font-bold">SOP-02</div>
+                            <h3 class="font-bold text-xl text-slate-900">Warehouse Climate Control & Palleting</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Finishing chemicals like tile adhesives, grouts, and sealants require specific storage conditions to preserve bonding strength.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-600 list-disc pl-5">
+                            <li><strong>Moisture Protection:</strong> Polymer adhesives and grouts are stored on elevated wooden pallets in dry, temperature-controlled zones.</li>
+                            <li><strong>FIFO Inventory Cycling:</strong> First-In, First-Out rules ensure fresh chemical compounds are delivered to jobsites.</li>
+                            <li><strong>Heavy Paver Stacking:</strong> Heavy porcelain crates are stored using certified forklift safety protocols.</li>
+                        </ul>
+                    </div>
+
+                    <!-- SOP 3 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 reveal-on-scroll">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-amber-100 text-amber-600 p-3 rounded-xl font-bold">SOP-03</div>
+                            <h3 class="font-bold text-xl text-slate-900">Order Dispatch & Freight Protection</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Transportation is where micro-cracks can occur if materials aren't secured properly. We enforce strict loading protocols.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-600 list-disc pl-5">
+                            <li><strong>Corner Edge Guarding:</strong> Tile boxes are wrapped in protective shrink-film with reinforced corner protectors.</li>
+                            <li><strong>Crate Strapping:</strong> High-density pallets are strapped to transport vehicles to prevent shifting during transit.</li>
+                            <li><strong>Driver Safety Briefing:</strong> Transport drivers are trained in safe unloading procedures at active building sites.</li>
+                        </ul>
+                    </div>
+
+                    <!-- SOP 4 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 reveal-on-scroll">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-amber-100 text-amber-600 p-3 rounded-xl font-bold">SOP-04</div>
+                            <h3 class="font-bold text-xl text-slate-900">After-Sales Technical Guidance</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            We support masons and installation teams with technical specs for proper trowel notch sizing and adhesive mixing ratios.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-600 list-disc pl-5">
+                            <li><strong>Substrate Preparation Advice:</strong> Guidelines on floor leveling before laying porcelain slabs.</li>
+                            <li><strong>Joint Gap Calibration:</strong> Recommending minimum tile joint widths (2mm to 4mm) for thermal expansion.</li>
+                            <li><strong>Customer Satisfaction Follow-up:</strong> Post-delivery inspection calls for commercial wholesale clients.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer with Clear Social Media Brand Logos & Hover Effects -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3 text-white font-black text-2xl">
+                    <span class="bg-amber-600 text-white px-2.5 py-1 rounded-lg">1234</span>
+                    <span class="text-xl">Finishing</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    1234 Finishing & Ceramics. Prime direct-factory distributor of premium floor tiles, wall ceramics, and finishing adhesives.
+                </p>
+                
+                <!-- SOCIAL MEDIA BRAND LOGOS (TikTok, Instagram, Facebook, Telegram) -->
+                <div class="pt-3">
+                    <span class="text-xs uppercase tracking-wider text-slate-300 font-extrabold block mb-3">Follow Us On Social Media</span>
+                    <div class="flex space-x-3">
+                        <!-- TikTok -->
+                        <a href="https://tiktok.com" target="_blank" class="social-btn tiktok w-10 h-10 bg-slate-800 text-slate-300 rounded-xl flex items-center justify-center shadow-md text-base" title="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" class="social-btn instagram w-10 h-10 bg-slate-800 text-slate-300 rounded-xl flex items-center justify-center shadow-md text-base" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://facebook.com" target="_blank" class="social-btn facebook w-10 h-10 bg-slate-800 text-slate-300 rounded-xl flex items-center justify-center shadow-md text-base" title="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <!-- Telegram -->
+                        <a href="https://t.me" target="_blank" class="social-btn telegram w-10 h-10 bg-slate-800 text-slate-300 rounded-xl flex items-center justify-center shadow-md text-base" title="Telegram">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4">Quality & Services</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><button onclick="navigateTo('about')" class="hover:text-amber-500 transition">About Company</button></li>
+                    <li><button onclick="navigateTo('wholesale')" class="hover:text-amber-500 transition">Contractor Tiered Pricing</button></li>
+                    <li><button onclick="navigateTo('wholesale')" class="hover:text-amber-500 transition">Bulk Jobsite Transportation</button></li>
+                    <li><button onclick="navigateTo('operations')" class="hover:text-amber-500 transition">Quality Assurance SOP</button></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4">1234 Contact & Depot</h4>
+                <p class="text-xs text-slate-400">Main Depot & Showroom</p>
+                <p class="text-xs text-slate-200 font-semibold mt-2">Email: info@1234ceramics.com</p>
+                <p class="text-xs text-slate-200 font-semibold">Phone: +251 911 123 456</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-8 border-t border-slate-800 text-xs text-center text-slate-500">
+            &copy; 2026 1234 Finishing & Ceramic Supplies. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal Popup -->
+    <div id="product-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 transform transition-all">
+            <div class="relative">
+                <img id="modal-img" src="" alt="Product" class="h-56 w-full object-cover">
+                <button onclick="closeProductModal()" class="absolute top-3 right-3 bg-slate-900/70 hover:bg-slate-900 text-white p-2 rounded-full backdrop-blur">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <span id="modal-category" class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">Category</span>
+                <h3 id="modal-title" class="text-xl font-bold text-slate-900 mt-2">Product Title</h3>
+                <p id="modal-price" class="text-lg font-extrabold text-amber-600 mt-1">$0.00</p>
+                
+                <div class="mt-4 border-t pt-4 space-y-2 text-xs text-slate-600">
+                    <div class="flex justify-between"><strong>PEI Rating:</strong> <span id="modal-pei">Class 4 - Heavy Commercial</span></div>
+                    <div class="flex justify-between"><strong>Water Absorption:</strong> <span id="modal-water">E &lt; 0.5% (Impervious)</span></div>
+                    <div class="flex justify-between"><strong>Slip Resistance:</strong> <span id="modal-slip">R10 Certified</span></div>
+                </div>
+
+                <div class="mt-6 flex gap-3">
+                    <button onclick="closeProductModal(); navigateTo('wholesale');" class="flex-grow bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 rounded-lg text-sm transition text-center">
+                        Request Wholesale Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-6 py-4 rounded-xl shadow-2xl transition transform translate-y-20 opacity-0 duration-300 z-50 flex items-center space-x-3">
+        <i data-lucide="check-circle" class="text-amber-500 w-5 h-5"></i>
+        <span id="toast-message" class="text-sm font-medium">Notification message</span>
+    </div>
+
+    <!-- JavaScript Navigation & Logic -->
+    <script>
+        // Catalog Products Data
+        const products = [
+            {
+                id: 1,
+                title: "Imperial Carrara Polished Porcelain",
+                category: "floor",
+                categoryLabel: "Floor Tiles",
+                price: "$28.50 / m²",
+                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+                desc: "High-gloss marble-effect porcelain tile with mirror polish, 60cm x 120cm.",
+                pei: "Class 4 - Commercial & Residential Floor",
+                water: "E < 0.1% (Impervious)",
+                slip: "R9 Glossy Finish"
+            },
+            {
+                id: 2,
+                title: "Slate Grey Matte Architectural Paver",
+                category: "floor",
+                categoryLabel: "Floor Tiles",
+                price: "$24.00 / m²",
+                image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
+                desc: "Anti-slip textured heavy traffic ceramic tile, 60cm x 60cm.",
+                pei: "Class 5 - Heavy Duty Traffic",
+                water: "E < 0.5%",
+                slip: "R11 Anti-Slip Certified"
+            },
+            {
+                id: 3,
+                title: "Artisan Mosaic Glazed Wall Tile",
+                category: "wall",
+                categoryLabel: "Wall Ceramics",
+                price: "$19.50 / m²",
+                image: "https://images.unsplash.com/photo-1527352726752-1903158a3860?auto=format&fit=crop&w=600&q=80",
+                desc: "Decorative handcrafted wall ceramics for kitchens and luxury bathrooms.",
+                pei: "Class 1 - Wall Application",
+                water: "E < 3.0%",
+                slip: "N/A Wall Tile"
+            },
+            {
+                id: 4,
+                title: "1234 UltraFlex Polymer Tile Adhesive (25kg)",
+                category: "finishing",
+                categoryLabel: "Finishing Supplies",
+                price: "$14.00 / bag",
+                image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+                desc: "Waterproof high-bond tile adhesive engineered for heavy porcelain slabs.",
+                pei: "C2TE Standard",
+                water: "Waterproof Formula",
+                slip: "High Initial Grab"
+            },
+            {
+                id: 5,
+                title: "Stainless Gold Accent Trim (2.7m)",
+                category: "finishing",
+                categoryLabel: "Finishing Supplies",
+                price: "$9.50 / pc",
+                image: "https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=600&q=80",
+                desc: "Rust-proof brushed metal edge trim profile for ceramic joint protection.",
+                pei: "Grade 304 Stainless",
+                water: "100% Corrosion Resistant",
+                slip: "Smooth Finished Edge"
+            },
+            {
+                id: 6,
+                title: "Venetian Beige Satin Ceramic",
+                category: "wall",
+                categoryLabel: "Wall Ceramics",
+                price: "$21.00 / m²",
+                image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80",
+                desc: "Warm satin-finish interior ceramic wall tile, 30cm x 60cm.",
+                pei: "Class 2 - Interior Wall",
+                water: "E < 2.0%",
+                slip: "Satin Smooth"
+            }
+        ];
+
+        let savedFavorites = 0;
+
+        // Navigation Page Switcher
+        function navigateTo(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-view');
+            pages.forEach(p => p.classList.remove('active'));
+
+            // Show selected page
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update Desktop Nav Active Indicator
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active-page'));
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) activeNav.classList.add('active-page');
+
+            // Update Mobile Nav Active Indicator
+            const mNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mNavLinks.forEach(link => link.classList.remove('active-page'));
+            const activeMNav = document.getElementById('mnav-' + pageId);
+            if (activeMNav) activeMNav.classList.add('active-page');
+
+            // Close Mobile Menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) mobileMenu.classList.add('hidden');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(checkScrollAnimations, 100);
+        }
+
+        // Toggle Mobile Navigation
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Render Product Catalog Cards
+        function renderCatalog(items) {
+            const grid = document.getElementById('catalog-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            items.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition flex flex-col justify-between group reveal-on-scroll';
+                card.innerHTML = `
+                    <div>
+                        <div class="relative overflow-hidden h-52 bg-slate-100">
+                            <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md">${product.categoryLabel}</span>
+                            <button onclick="toggleFavorite(this)" class="absolute top-3 right-3 bg-white/90 hover:bg-white text-slate-700 p-2 rounded-full shadow transition" title="Save Product">
+                                <i data-lucide="bookmark" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-extrabold text-slate-900 text-lg group-hover:text-amber-600 transition">${product.title}</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">${product.desc}</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+                        <span class="font-extrabold text-amber-600 text-lg">${product.price}</span>
+                        <button onclick="openProductModal(${product.id})" class="bg-slate-100 hover:bg-amber-600 hover:text-white text-slate-800 text-xs font-bold px-3.5 py-2 rounded-lg transition flex items-center space-x-1">
+                            <span>Details</span>
+                            <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        // Filter Catalog
+        function filterCatalog(category, btnElement) {
+            const btns = document.querySelectorAll('.filter-btn');
+            btns.forEach(b => {
+                b.className = 'filter-btn bg-slate-200 text-slate-700 hover:bg-slate-300 px-4 py-2 rounded-lg text-sm font-semibold transition';
+            });
+            btnElement.className = 'filter-btn bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition';
+
+            if (category === 'all') {
+                renderCatalog(products);
+            } else {
+                const filtered = products.filter(p => p.category === category);
+                renderCatalog(filtered);
+            }
+        }
+
+        // Bookmark / Favorite Toggle
+        function toggleFavorite(btn) {
+            btn.classList.toggle('text-amber-600');
+            btn.classList.toggle('bg-amber-50');
+            const icon = btn.querySelector('i');
+            if (icon) {
+                if (btn.classList.contains('text-amber-600')) {
+                    savedFavorites++;
+                    showToast('Product saved to your bookmarks');
+                } else {
+                    savedFavorites = Math.max(0, savedFavorites - 1);
+                }
+            }
+            document.getElementById('fav-count-badge').textContent = savedFavorites;
+        }
+
+        // Modal Details Window
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            document.getElementById('modal-img').src = product.image;
+            document.getElementById('modal-title').textContent = product.title;
+            document.getElementById('modal-category').textContent = product.categoryLabel;
+            document.getElementById('modal-price').textContent = product.price;
+            document.getElementById('modal-pei').textContent = product.pei;
+            document.getElementById('modal-water').textContent = product.water;
+            document.getElementById('modal-slip').textContent = product.slip;
+
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        // Language Selector Controls
+        function toggleLangMenuDesktop(e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('lang-dropdown-desktop');
+            dropdown.classList.toggle('hidden');
+        }
+
+        function toggleLangMenuMobile(e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('lang-dropdown-mobile');
+            dropdown.classList.toggle('hidden');
+        }
+
+        function selectLanguage(code, label) {
+            document.getElementById('current-lang-text').textContent = code;
+            document.getElementById('current-lang-text-mobile').textContent = code;
+            
+            // Hide dropdowns
+            document.getElementById('lang-dropdown-desktop').classList.add('hidden');
+            document.getElementById('lang-dropdown-mobile').classList.add('hidden');
+
+            showToast(`Language switched to ${label} (Layout ready for full translation)`);
+        }
+
+        // Close dropdowns when clicking outside
+        window.addEventListener('click', function() {
+            const d1 = document.getElementById('lang-dropdown-desktop');
+            const d2 = document.getElementById('lang-dropdown-mobile');
+            if (d1) d1.classList.add('hidden');
+            if (d2) d2.classList.add('hidden');
+        });
+
+        // Tile Needs Estimator Calculation
+        function calculateTileNeeds() {
+            const length = parseFloat(document.getElementById('calc-length').value) || 0;
+            const width = parseFloat(document.getElementById('calc-width').value) || 0;
+            const tileSize = parseFloat(document.getElementById('calc-tile-size').value) || 0.36;
+            const wasteFactor = parseFloat(document.getElementById('calc-waste').value) || 0.10;
+
+            const netArea = length * width;
+            const totalArea = netArea * (1 + wasteFactor);
+            const tileCount = Math.ceil(totalArea / tileSize);
+            const adhesiveBags = Math.ceil(totalArea / 5); 
+            const groutBags = Math.ceil(totalArea / 15); 
+
+            document.getElementById('res-net-area').textContent = netArea.toFixed(2) + ' m²';
+            document.getElementById('res-total-area').textContent = totalArea.toFixed(2) + ' m²';
+            document.getElementById('res-tile-count').textContent = tileCount + ' pcs';
+            document.getElementById('res-adhesive').textContent = adhesiveBags + ' bags';
+            document.getElementById('res-grout').textContent = groutBags + ' packs';
+        }
+
+        // Notification Toast Display
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // B2B Form Submission Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast('Thank you! 1234 B2B team has received your wholesale inquiry.');
+            e.target.reset();
+        }
+
+        // DYNAMIC COUNTER ANIMATION FROM 0 TO TARGET
+        let countersAnimated = false;
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 1500; // ms
+                const stepTime = 20;
+                const steps = duration / stepTime;
+                const increment = target / steps;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.ceil(current);
+                    }
+                }, stepTime);
+            });
+        }
+
+        // SCROLL REVEAL ANIMATION CONTROLLER
+        function checkScrollAnimations() {
+            const reveals = document.querySelectorAll('.reveal-on-scroll');
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 60) {
+                    el.classList.add('revealed');
+                }
+            });
+
+            // Trigger statistics counter animation when visible
+            const statsSection = document.getElementById('stats-section');
+            if (statsSection && !countersAnimated) {
+                const statsTop = statsSection.getBoundingClientRect().top;
+                if (statsTop < windowHeight - 50) {
+                    countersAnimated = true;
+                    animateCounters();
+                }
+            }
+        }
+
+        // INITIAL 0 TO 100% PRELOADER COUNTER
+        function runInitialPreloader() {
+            let count = 0;
+            const loaderBar = document.getElementById('loader-bar');
+            const loaderPercent = document.getElementById('loader-percent');
+            const preloader = document.getElementById('page-preloader');
+
+            if (!loaderBar || !loaderPercent || !preloader) return;
+
+            const interval = setInterval(() => {
+                count += Math.floor(Math.random() * 12) + 5;
+                if (count >= 100) {
+                    count = 100;
+                    loaderBar.style.width = '100%';
+                    loaderPercent.textContent = '100%';
+                    clearInterval(interval);
+                    
+                    // Fade out loader
+                    setTimeout(() => {
+                        preloader.style.opacity = '0';
+                        preloader.style.visibility = 'hidden';
+                        checkScrollAnimations();
+                    }, 300);
+                } else {
+                    loaderBar.style.width = count + '%';
+                    loaderPercent.textContent = count + '%';
+                }
+            }, 40);
+        }
+
+        // Initialization
+        window.onload = function() {
+            try {
+                if (window.lucide) {
+                    lucide.createIcons();
+                }
+                renderCatalog(products);
+                calculateTileNeeds();
+                navigateTo('home');
+                runInitialPreloader();
+                window.addEventListener('scroll', checkScrollAnimations);
+            } catch (err) {
+                console.error("Initialization error:", err);
+                const preloader = document.getElementById('page-preloader');
+                if (preloader) {
+                    preloader.style.display = 'none';
+                }
+            }
+        };
+    </script>
+</body>
+</html>
+```
